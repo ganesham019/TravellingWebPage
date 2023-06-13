@@ -956,7 +956,9 @@ footer::after {
     .search_container {
         text-align: center;
     }
-
+    .trip_header_section .primary_link::after{
+        display: none;
+     }
     .container .content_container {
         padding: 200px 8px 70px 8px;
     }
@@ -1037,21 +1039,20 @@ footer::after {
     }
 
     .benefit_box .benefit__title {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .desc_text {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .primary_link {
         font-size: 14px;
     }
-
-
-
     .trip_header_section .primary_link {
         width: 100%;
+        margin: auto;
+        float: none;
     }
 
     .trip_header_section .heading_text_medium {
