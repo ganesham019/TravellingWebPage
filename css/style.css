@@ -265,7 +265,7 @@ hero::after {
 }
 
 .container .content_container {
-    padding-top: 284px;
+   margin-top: 284px;
 }
 
 .hero_content article h1 {
@@ -429,6 +429,7 @@ hero::after {
     text-align: left;
     float: left;
     width: calc((100% / 3) - 6px);
+    padding: 5px;
     /* padding-right: 50px; */
     /* display: inline-block; */
 }
@@ -459,36 +460,65 @@ hero::after {
     color: var(--clr-black);
 }
 
-.primary_link {
+.primary_hover{
     font-size: 16px;
     position: relative;
     color: var(--clr-skyblue);
     font-family: Lato-Regular;
     text-transform: uppercase;
     transition: all 0.6s;
+    cursor:pointer;
 }
 
-.primary_link::after {
-    content: '\0279E';
+.primary_hover::after{
+    display:inherit;
+    content:"⟶";
     position: absolute;
+    top: 3px;
+    line-height: 8px;
+    opacity:0;
+    transition: all 0.8s;
+  }
+
+  .primary_hover:hover::after{
+    opacity:1;
+     transition: all 0.8s;
+    padding-left:20px;
+  }
+  .trip_header_section .primary_hover::after{
+    position: absolute;
+    top: 15px !important;
+    line-height: 8px;
+  }
+.trip_header_section .primary_hover{
+    float: right;
+    width: 150px;
+}
+
+
+.view_more{
+    float: right;
+    font-size: 16px;
+    position: relative;
+    color: var(--clr-skyblue);
+    font-family: Lato-Regular;
+    text-transform: uppercase;
+    cursor:pointer;
+    transition: all 0.8s;
+}
+.view_more::after{
+
+    content:"⟶";
+    transition: all 0.8s;
+    position: relative;
+    top: -3px;
     opacity: 0;
-    top: 0px;
-    left: 120px;
-    transition: 1s;
+    height: 5px;
 }
-
-.trip_column::after {
-    left: 140px;
-}
-
-.trip_column .primary_link:hover:after {
-    left: 160px;
-}
-
-.primary_link:hover:after {
+.view_more:hover::after{
     opacity: 1;
-    left: 140px;
-    color: var(--clr-skyblue)
+    transition: all 0.8s;
+    padding-left:20px;
 }
 
 .primary_link:hover {
@@ -525,14 +555,14 @@ hero::after {
     margin-bottom: 0px;
 }
 
-.trip_header_section .primary_link {
+/* .trip_header_section .primary_link {
     float: right;
     width: 180px;
 }
 
 .trip_header_section .primary_link i {
     margin-right: 0px;
-}
+} */
 
 .blog_box {
     width: 100%;
@@ -557,12 +587,12 @@ hero::after {
 }
 
 .row_box img {
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
 .row_box:hover img {
-    transition: all 1.5s ease-in-out;
-    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
 }
 
 
@@ -571,16 +601,16 @@ hero::after {
     width: calc((100% / 3) - 7px);
     position: relative;
     overflow: hidden;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .th_row_box img {
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
 .th_row_box:hover img {
-    transition: all 1.5s ease-in-out;
-    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
 }
 
 .mg_right_10 {
@@ -914,10 +944,6 @@ footer::after {
     .select_box input[type=text] {
         font-size: 14px;
     }
-
-    .container .content_container {
-        padding: 284px auto 70px 70px;
-    }
 }
 
 @media(max-width:780px) {
@@ -927,7 +953,10 @@ footer::after {
         right: 35px;
         top: 30px;
         color: var(--clr-white);
+        background-color: transparent;
+        border: none;
     }
+
     .container {
         padding: 20px;
     }
@@ -956,11 +985,13 @@ footer::after {
     .search_container {
         text-align: center;
     }
-    .trip_header_section .primary_link::after{
+
+    /* .trip_header_section .primary_link::after {
         display: none;
-     }
+    } */
+
     .container .content_container {
-        padding: 200px 8px 70px 8px;
+        margin-top: 200px;
     }
 
     .search_container .btn_primary {
@@ -969,6 +1000,11 @@ footer::after {
 
     .search_container .select_box {
         width: 80%;
+        margin: 10px 0px;
+    }
+
+    .select_box::after {
+        margin-top: 30px;
     }
 
     .select_box input[type=text] {
@@ -1049,6 +1085,7 @@ footer::after {
     .primary_link {
         font-size: 14px;
     }
+
     .trip_header_section .primary_link {
         width: 100%;
         margin: auto;
@@ -1095,15 +1132,18 @@ footer::after {
         text-align: center;
         margin-top: 20px;
     }
+
     .hero_content article h1 br {
         display: none;
-     }
-     .menu__list_item::after{
+    }
+
+    .menu__list_item::after {
         top: 42px;
-     }
-     .menu__list_item:hover::after{
-     top: 42px;
-     }
+    }
+
+    .menu__list_item:hover::after {
+        top: 42px;
+    }
 
 }
 
@@ -1116,7 +1156,7 @@ footer::after {
     .hero_content article h1 {
         font-size: 38px;
     }
-    
+
 
     .hero_content article p {
         font-size: 14px;
