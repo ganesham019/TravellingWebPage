@@ -174,7 +174,6 @@ header {
     width: 100%;
     transition: all .3s ease;
     z-index: 10;
-    padding: 0px 124px;
     overflow: auto;
 }
 
@@ -243,6 +242,7 @@ header {
 .hero {
     position: relative;
     height: 962px;
+
 }
 
 hero::after {
@@ -257,11 +257,15 @@ hero::after {
     background-size: cover;
 }
 
-.hero_content {
-    position: absolute;
-    left: 130px;
-    top: 284px;
+.container {
+    max-width: 980px;
+    margin: auto;
+    /* padding: 20px; */
     color: var(--clr-white);
+}
+
+.container .content_container {
+    padding-top: 284px;
 }
 
 .hero_content article h1 {
@@ -280,6 +284,7 @@ hero::after {
     font-stretch: normal;
     font-style: normal;
     margin-bottom: 54px;
+    max-width: 600px;
 }
 
 .search_container .select_box {
@@ -330,7 +335,7 @@ hero::after {
     position: relative;
     width: 300px;
     border: 0.5px solid var(--clr-white);
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .select_box input[type=text]:focus {
@@ -355,16 +360,25 @@ hero::after {
 }
 
 .search_container .btn_primary {
-    float: right;
+    vertical-align: top;
     padding: 12px 40px;
     font-size: 22px;
-    line-height: 26px;
 }
 
 .main_container {
-    max-width: 968px;
+    max-width: 980px;
     margin: auto;
     text-align: center;
+    /* background-color: #1b7dff; */
+}
+
+.hero_content .main_container {
+    margin-top: 284px;
+    margin-left: 135px;
+    max-width: 980px;
+    /* margin: auto; */
+    background: #000;
+    text-align: left;
 }
 
 /* Benefit Section */
@@ -413,7 +427,7 @@ hero::after {
 .benefit_box {
     text-align: left;
     float: left;
-    width: calc(100% / 3);
+    width: calc((100% / 3) - 6px);
     /* padding-right: 50px; */
     /* display: inline-block; */
 }
@@ -445,28 +459,13 @@ hero::after {
 }
 
 .primary_link {
+    font-size: 16px;
     position: relative;
     color: var(--clr-skyblue);
     font-family: Lato-Regular;
     text-transform: uppercase;
     transition: all 0.6s;
 }
-
-/* .primary_link::after {
-    content: '\f178';
-    position: absolute;
-    opacity: 0;  
-    top: 0px;
-    left: 30px;
-    transition: 1s;
-    color: red;
-} */
-
-/* .primary_link:hover:after {
-    opacity: 1;
-    left: 130px;
-    color: red;
-  } */
 
 .primary_link::after {
     content: '\0279E';
@@ -599,12 +598,10 @@ hero::after {
 }
 
 .row_box img {
-    /* min-height: 354px; */
     width: 100%;
 }
 
 .th_row_box img {
-    /* min-height: 294px; */
     width: 100%;
 }
 
@@ -635,7 +632,7 @@ hero::after {
 
 /* trip_blog_section */
 .trip_place_section {
-    padding-top: 132px;
+    margin-top: 132px;
 }
 
 .trip_row {
@@ -797,7 +794,7 @@ hero::after {
 .video_container {
     height: 100vh;
     max-height: 650px;
-position: relative;
+    position: relative;
 }
 
 .video_container figure img {
@@ -816,15 +813,17 @@ position: relative;
     width: 100%;
     opacity: .7;
 }
-.video_container i{
+
+.video_container i {
     font-size: 60px;
     color: var(--clr-white);
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
+
 footer {
     position: relative;
     background-color: var(--light-black);
@@ -838,9 +837,12 @@ footer::after {
 
 .footer_section {
     color: var(--clr-white);
-    background-color: var(--light-black);
     overflow: auto;
-    padding: 124px 164px 118px 124px;
+}
+
+.footer_content {
+    margin: 124px auto;
+    overflow: auto;
 }
 
 .odigo_logo {
@@ -850,8 +852,6 @@ footer::after {
 .odigo_logo img {
     width: 150px;
 }
-
-
 
 .foo_menu_list li:first-child {
     font-family: Lato-Regular;
@@ -879,4 +879,292 @@ footer::after {
 .foo_menu_list {
     width: calc((100% / 3) - 4px);
     display: inline-block;
+}
+
+.footer_section::after {
+    clear: both;
+    display: table;
+    content: "";
+}
+
+.footer_section .container article {
+    padding: 124px auto;
+    overflow: auto;
+}
+
+.burger_icon {
+    display: none;
+}
+
+@media(max-width:1200px) {
+
+    .search_container .select_box {
+        margin-right: 14px;
+    }
+
+    .select_box::after {
+        width: 100%;
+    }
+
+    .radio_circle {
+        margin-right: 12px;
+    }
+
+    .select_box input[type=text] {
+        font-size: 14px;
+    }
+
+    .container .content_container {
+        padding: 284px auto 70px 70px;
+    }
+}
+
+@media(max-width:780px) {
+    .burger_icon {
+        display: block;
+        position: absolute;
+        right: 35px;
+        top: 30px;
+        color: var(--clr-white);
+    }
+    .container {
+        padding: 20px;
+    }
+
+    header {
+        top: 40px;
+    }
+
+    .menu_box {
+        display: none;
+    }
+
+    .menu_box.active {
+        display: block;
+        width: 100%;
+        background-color: black;
+    }
+
+    .menu_box.active .menu__list_item {
+        display: block;
+        padding: 10px 10px;
+        text-align: center;
+    }
+
+    .search_container {
+        text-align: center;
+    }
+
+    .container .content_container {
+        padding: 200px 8px 70px 8px;
+    }
+
+    .search_container .btn_primary {
+        line-height: 65px;
+    }
+
+    .search_container .select_box {
+        width: 80%;
+    }
+
+    .select_box input[type=text] {
+        width: 80%;
+    }
+
+    .benefits_wrapper {
+        padding: 64px 24px 20px 30px;
+    }
+
+    .trip_blog_container {
+        padding: 20px;
+    }
+
+    .benefit_box {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .hero_content article h1 {
+        font-size: 40px;
+    }
+
+    .heading_text_medium::after {
+        text-align: center;
+        margin: 16px auto;
+    }
+
+    .heading_text_medium {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+
+
+    .margin--top_left {
+        margin: 20px;
+    }
+
+    .margin--top_right {
+        margin: 20px;
+    }
+
+    .trip_column img {
+        height: 100%;
+    }
+
+    .row_box img {
+        min-height: 200px;
+    }
+
+    .trip_text_heading {
+        font-size: 2rem;
+    }
+
+    .trip_row:first-child {
+        margin-bottom: 24px;
+    }
+
+    .trip_bold_text {
+        font-size: 30px;
+    }
+
+    .visit_container {
+        margin: 45px auto;
+        padding: 20px;
+    }
+
+    .benefit_box .benefit__title {
+        font-size: 14px;
+    }
+
+    .desc_text {
+        font-size: 12px;
+    }
+
+    .primary_link {
+        font-size: 14px;
+    }
+
+
+
+    .trip_header_section .primary_link {
+        width: 100%;
+    }
+
+    .trip_header_section .heading_text_medium {
+        float: none;
+    }
+
+    .trip_place_section {
+        margin-top: 45px;
+    }
+
+    .trip_column {
+        width: 100%;
+    }
+
+    .trip_place_content .desc_text {
+        margin-bottom: 30px;
+    }
+
+    .visit_box {
+        padding-right: 20px;
+        width: calc(100% / 2);
+    }
+
+    .mg_right_30 {
+        margin-right: 0px;
+    }
+
+    .foo_menu_section {
+        width: 100%;
+    }
+
+    .odigo_logo {
+        float: none;
+        text-align: center;
+    }
+
+    .foo_menu_list {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+}
+
+@media(max-width:480px) {
+    .search_container .select_box {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .hero_content article h1 {
+        font-size: 24px;
+    }
+
+    .hero_content article p {
+        font-size: 14px;
+    }
+
+    .heading_text_medium {
+        float: none;
+        font-size: 20px;
+    }
+
+    .trip_blog_container {
+        margin-top: 45px;
+    }
+
+    .trip_header_section .heading_text_medium {
+        float: none;
+    }
+
+    .row_box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .th_row_box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .mg_right_10 {
+        margin: 0px;
+    }
+
+    .visit_box {
+        width: 100%;
+    }
+
+    .btn_primary {
+        font-size: 12px;
+    }
+
+    .visit_container {
+        margin: 10px auto;
+    }
+
+    .visit_box {
+        padding: 0px;
+    }
+
+    .two_clm_box {
+        margin-bottom: 0px;
+    }
+
+    .row_box {
+        width: 100%;
+        margin-bottom: 10px;
+
+    }
+
+    .th_row_box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
 }
