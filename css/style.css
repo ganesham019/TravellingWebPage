@@ -1097,6 +1097,12 @@ footer::after {
     .hero_content article h1 br {
         display: none;
      }
+     .menu__list_item::after{
+        top: 42px;
+     }
+     .menu__list_item:hover::after{
+     top: 42px;
+     }
 
 }
 
@@ -1151,7 +1157,7 @@ footer::after {
     }
 
     .visit_container {
-        margin: 10px auto;
+        margin: 40px auto;
     }
 
     .visit_box {
