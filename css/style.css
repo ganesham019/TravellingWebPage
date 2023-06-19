@@ -253,7 +253,7 @@ hero::after {
 
 .hero_bg {
     background-image: url('../images/hero.jpg');
-    object-fit: contain;
+    /* object-fit: contain; */
     background-size: cover;
 }
 
@@ -261,11 +261,12 @@ hero::after {
     max-width: 980px;
     margin: auto;
     padding: 20px;
+    display: flow-root;
     color: var(--clr-white);
 }
 
 .container .content_container {
-   margin-top: 284px;
+    margin-top: 284px;
 }
 
 .hero_content article h1 {
@@ -281,9 +282,6 @@ hero::after {
     font-family: Lato-Regular;
     font-size: 16px;
     line-height: 1.5;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     margin-bottom: 54px;
     max-width: 600px;
 }
@@ -317,14 +315,10 @@ hero::after {
     background-color: transparent;
     border: none;
     float: left;
-    /* clear: none;
-    display: block; */
     font-family: Lato-light;
     font-size: 18px;
     color: var(--clr-white);
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.33;
     width: 220px;
 }
@@ -355,15 +349,14 @@ hero::after {
     font-family: Lato-light;
     font-size: 18px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.33;
 }
 
 .search_container .btn_primary {
     vertical-align: top;
-    padding: 12px 40px;
+    padding: 8px 40px;
     font-size: 22px;
+    display: inline-block;
 }
 
 .main_container {
@@ -399,10 +392,6 @@ hero::after {
     display: table;
 }
 
-.benfit_card_container {
-    overflow: hidden;
-}
-
 .heading_text_medium {
     font-family: Lato-Light;
     margin-bottom: 120px;
@@ -429,9 +418,7 @@ hero::after {
     text-align: left;
     float: left;
     width: calc((100% / 3) - 6px);
-    padding: 5px;
-    /* padding-right: 50px; */
-    /* display: inline-block; */
+    padding: 5px 20px 5px 5px;
 }
 
 .benefit_box .bft_img {
@@ -460,65 +447,67 @@ hero::after {
     color: var(--clr-black);
 }
 
-.primary_hover{
+.primary_hover {
     font-size: 16px;
     position: relative;
     color: var(--clr-skyblue);
     font-family: Lato-Regular;
     text-transform: uppercase;
     transition: all 0.6s;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.primary_hover::after{
-    display:inherit;
-    content:"⟶";
+.primary_hover::after {
+    display: inherit;
+    content: "⟶";
     position: absolute;
     top: 3px;
     line-height: 8px;
-    opacity:0;
+    opacity: 0;
     transition: all 0.8s;
-  }
+}
 
-  .primary_hover:hover::after{
-    opacity:1;
-     transition: all 0.8s;
-    padding-left:20px;
-  }
-  .trip_header_section .primary_hover::after{
+.primary_hover:hover::after {
+    opacity: 1;
+    transition: all 0.8s;
+    padding-left: 20px;
+}
+
+.trip_header_section .primary_hover::after {
     position: absolute;
     top: 15px !important;
     line-height: 8px;
-  }
-.trip_header_section .primary_hover{
+}
+
+.trip_header_section .primary_hover {
     float: right;
     width: 150px;
 }
 
 
-.view_more{
+.view_more {
     float: right;
     font-size: 16px;
     position: relative;
     color: var(--clr-skyblue);
     font-family: Lato-Regular;
     text-transform: uppercase;
-    cursor:pointer;
+    cursor: pointer;
     transition: all 0.8s;
 }
-.view_more::after{
 
-    content:"⟶";
+.view_more::after {
+    content: "⟶";
     transition: all 0.8s;
     position: relative;
     top: -3px;
     opacity: 0;
     height: 5px;
 }
-.view_more:hover::after{
+.view_more:hover::after {
     opacity: 1;
     transition: all 0.8s;
-    padding-left:20px;
+    padding-left: 20px;
 }
 
 .primary_link:hover {
@@ -795,8 +784,6 @@ hero::after {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.33;
 }
 
@@ -895,9 +882,6 @@ footer::after {
     margin-bottom: 6px;
     font-family: Lato-Regular;
     font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.5;
 }
 
