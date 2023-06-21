@@ -503,6 +503,7 @@ hero::after {
     opacity: 0;
     height: 5px;
 }
+
 .view_more:hover::after {
     opacity: 1;
     transition: all 0.8s;
@@ -1021,8 +1022,6 @@ footer::after {
         text-align: center;
         margin-bottom: 24px;
     }
-
-
 
     .margin--top_left {
         margin: 20px;
